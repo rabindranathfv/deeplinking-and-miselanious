@@ -29,7 +29,6 @@ class _PokemonView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('POKEMON DATA: ${pokemon.toString()}');
     return Scaffold(
       appBar: AppBar(
         title: Text(pokemon.name),
@@ -37,7 +36,7 @@ class _PokemonView extends StatelessWidget {
           IconButton(
               onPressed: () {
                 // Link = Deeplink
-                SharePlugin.shareLink(pokemon.spriteFront, 'Mira este pókmeon');
+                SharePlugin.shareLink(pokemon.spriteFront, 'Conoce mejor este pókemon');
               },
               icon: const Icon(Icons.share_outlined))
         ],

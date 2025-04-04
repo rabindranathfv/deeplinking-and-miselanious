@@ -7,7 +7,6 @@ final pokemonsRepositoryProvider = Provider<PokemonRepository>((ref) {
 });
 
 final pokemonProvider = FutureProvider.family<Pokemon, String>((ref, id) async {
-  print('Fetching Pokemon with id: $id');
   final pokemonRepository = ref.watch( pokemonsRepositoryProvider );
   final ( pokemon, error ) = await pokemonRepository.getPokemon(id);
   if ( pokemon != null ) return pokemon;

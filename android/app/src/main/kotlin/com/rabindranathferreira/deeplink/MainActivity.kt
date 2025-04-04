@@ -1,4 +1,4 @@
-package com.example.deeplinking_and_miselanious
+package com.rabindranathferreira.deeplink
 
 import io.flutter.embedding.android.FlutterActivity
 
