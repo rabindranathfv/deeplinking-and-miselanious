@@ -35,8 +35,11 @@ class _PokemonView extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                // Link = Deeplink
-                SharePlugin.shareLink(pokemon.spriteFront, 'Conoce mejor este pókemon');
+                print('POKEMON.SPRITEFRONT: ${pokemon.spriteFront}');
+                // TODO: https://poke-deeplinking-poc.up.railway.app/pokemons/
+                final deepLinking = 'https://poke-deeplinking-poc.up.railway.app/pokemons/${pokemon.id}';
+                print('DEEPLINKING: ${deepLinking}');
+                SharePlugin.shareLink(deepLinking, 'Conoce mejor este pókemon');
               },
               icon: const Icon(Icons.share_outlined))
         ],
