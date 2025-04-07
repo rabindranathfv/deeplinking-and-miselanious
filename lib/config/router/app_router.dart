@@ -2,6 +2,10 @@ import 'package:go_router/go_router.dart';
 import 'package:deeplinking_and_miselanious/presentation/screens/screens.dart';
 
 final router = GoRouter(
+  redirect: (context, state) {
+    final uri = state.uri;
+    print('URI ===============>: ${uri}, host: ${uri.host}, path: ${uri.path}');
+  },
   routes: [
     GoRoute(
       path: '/',

@@ -77,7 +77,10 @@ class _PokemonGrid extends ConsumerWidget {
 
     return SliverGrid.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3, crossAxisSpacing: 2, mainAxisSpacing: 2),
+        crossAxisCount: 3,
+        crossAxisSpacing: 2,
+        mainAxisSpacing: 2,
+      ),
       itemCount: pokemonIds.length,
       itemBuilder: (context, index) {
         return GestureDetector(
@@ -92,15 +95,19 @@ class _PokemonGrid extends ConsumerWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png',
-                    fit: BoxFit.contain,
+                  Expanded(
+                    child: Image.network(
+                      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png',
+                      fit: BoxFit.contain,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     'Pokemon #${index + 1}',
                     style: const TextStyle(
-                        fontSize: 12, fontWeight: FontWeight.bold),
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),

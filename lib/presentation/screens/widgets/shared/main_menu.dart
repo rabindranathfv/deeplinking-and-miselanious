@@ -27,11 +27,10 @@ class MainMenu extends StatelessWidget {
       crossAxisCount: 3,
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
-      children: menuItems.map((item) => HomeMenuItem(
-        title: item.title,
-        route: item.route,
-        icon: item.icon
-      )).toList(),
+      children: menuItems
+          .map((item) => HomeMenuItem(
+              title: item.title, route: item.route, icon: item.icon))
+          .toList(),
     );
   }
 }
@@ -42,34 +41,39 @@ class HomeMenuItem extends StatelessWidget {
   final IconData icon;
   final List<Color> bgColors;
 
-  const HomeMenuItem({
-    super.key,
-    required this.title,
-    required this.route,
-    required this.icon,
-    this.bgColors = const [ Colors.lightBlue, Colors.blue ]
-  });
+  const HomeMenuItem(
+      {super.key,
+      required this.title,
+      required this.route,
+      required this.icon,
+      this.bgColors = const [Colors.lightBlue, Colors.blue]});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.push( route ),
+      onTap: () => context.push(route),
       child: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          gradient: LinearGradient(
-            colors: bgColors,
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          )
-        ),
+            borderRadius: BorderRadius.circular(20),
+            gradient: LinearGradient(
+              colors: bgColors,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            )),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon( icon, color: Colors.white, size: 40 ),
+            Icon(icon, color: Colors.white, size: 40),
             const SizedBox(height: 10),
-            Text(title, textAlign: TextAlign.center, style: const TextStyle(color: Colors.white ),)
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 10,
+              ),
+            )
           ],
         ),
       ),
