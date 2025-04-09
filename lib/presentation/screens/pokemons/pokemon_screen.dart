@@ -37,7 +37,9 @@ class _PokemonView extends StatelessWidget {
               onPressed: () {
                 print('POKEMON.SPRITEFRONT: ${pokemon.spriteFront}');
                 // TODO: https://poke-deeplinking-poc.up.railway.app/pokemons/
-                final deepLinking = 'https://poke-deeplinking-poc.up.railway.app/pokemons/${pokemon.id}';
+                // final deepLinking = 'https://poke-deeplinking-poc.up.railway.app/pokemons/${pokemon.id}';
+                final deepLinking =
+                    'https://poke-deeplinking-poc.up.railway.app/deeplinking/index.html?target=/pokemons/${pokemon.id}';
                 print('DEEPLINKING: ${deepLinking}');
                 SharePlugin.shareLink(deepLinking, 'Conoce mejor este pókemon');
               },
@@ -60,7 +62,7 @@ class _PokemonView extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              'Name: ${pokemon.name}',
+              'Name: ${pokemon.name ?? "Name info is not available"}',
             ),
             const SizedBox(height: 10),
           ],
@@ -79,7 +81,22 @@ class _ErrorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(message),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text(
+              'Pokemon info not available yet.',
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              message,
+              maxLines: 2,
+              style: const TextStyle(fontSize: 12),
+            ),
+          ],
+        ),
       ),
     );
   }
