@@ -4,7 +4,15 @@ import 'package:deeplinking_and_miselanious/presentation/screens/screens.dart';
 final router = GoRouter(
   redirect: (context, state) {
     final uri = state.uri;
-    print('URI ===============>: ${uri}, host: ${uri.host}, path: ${uri.path}');
+    print('URI ===============>: ${uri}, host: ${uri.host}, path: ${uri.path}, query: ${uri.queryParameters}');
+
+    final target = uri.queryParameters['target'];
+    print('TARGET: ${target}');
+    if (target != null && target.isNotEmpty) {
+      return target;
+    }
+
+    return null;
   },
   routes: [
     GoRoute(
