@@ -64,4 +64,6 @@ final router = GoRouter(
         ),
       ]
     ),
+    GoRoute(path: '/excluded', builder: (context, state) => const ExcludedScreen()),
+    GoRoute(path: '/user', builder: (context, state) => const UserScreen()),
 ]);

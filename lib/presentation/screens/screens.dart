@@ -12,3 +12,5 @@ export 'home/home_screen.dart';
 // Pokemons for test deepLinking
 export 'pokemons/pokemons_screen.dart';
 export 'pokemons/pokemon_screen.dart';
+export 'excluded/excluded_screen.dart';
+export 'user/user_screen.dart';
