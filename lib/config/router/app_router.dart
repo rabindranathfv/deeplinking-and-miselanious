@@ -9,6 +9,7 @@ final router = GoRouter(
     final target = uri.queryParameters['target'];
     print('TARGET: ${target}');
     if (target != null && target.isNotEmpty) {
+      print('REDIRECTING TO: ${target}');
       return target;
     }
 

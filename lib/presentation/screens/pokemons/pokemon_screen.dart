@@ -39,7 +39,7 @@ class _PokemonView extends StatelessWidget {
                 // TODO: https://poke-deeplinking-poc.up.railway.app/pokemons/
                 // final deepLinking = 'https://poke-deeplinking-poc.up.railway.app/pokemons/${pokemon.id}';
                 final deepLinking =
-                    'https://poke-deeplinking-poc.up.railway.app/deeplinking/index.html?target=/pokemons/${pokemon.id}';
+                    'https://poke-deeplinking-poc-production.up.railway.app/deeplinking/index.html?target=/pokemons/${pokemon.id}';
                 print('DEEPLINKING: ${deepLinking}');
                 SharePlugin.shareLink(deepLinking, 'Conoce mejor este pókemon');
               },

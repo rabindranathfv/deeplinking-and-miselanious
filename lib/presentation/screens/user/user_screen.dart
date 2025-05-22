@@ -18,7 +18,7 @@ class UserScreen extends StatelessWidget {
                 IconButton(
                   onPressed: () {
                     final deepLinking =
-                        'https://poke-deeplinking-poc.up.railway.app/deeplinking/index.html?target=/user';
+                        'https://poke-deeplinking-poc-production.up.railway.app/deeplinking/index.html?target=/user';
                     print('DEEPLINKING: ${deepLinking}');
                     SharePlugin.shareLink(deepLinking, 'Conoce mejor este pókemon');
                   },

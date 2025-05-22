@@ -18,7 +18,7 @@ class ExcludedScreen extends StatelessWidget {
                 IconButton(
                   onPressed: () {
                     final deepLinking =
-                        'https://poke-deeplinking-poc.up.railway.app/deeplinking/index.html?target=/excluded';
+                        'https://poke-deeplinking-poc-production.up.railway.app/deeplinking/index.html?target=/excluded';
                     print('DEEPLINKING: ${deepLinking}');
                     SharePlugin.shareLink(deepLinking, 'Conoce mejor este pókemon');
                   },
