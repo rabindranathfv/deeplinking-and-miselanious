@@ -1,0 +1,1 @@
+const String kDeeplinkBaseUrl = 'https://poke-deeplinking-poc-production.up.railway.app/deeplinking/index.html';
