@@ -1,4 +1,5 @@
 import 'package:deeplinking_and_miselanious/config/plugins/share_plugin.dart';
+import 'package:deeplinking_and_miselanious/constants.dart';
 import 'package:deeplinking_and_miselanious/presentation/providers/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -39,7 +40,7 @@ class _PokemonView extends StatelessWidget {
                 // TODO: https://poke-deeplinking-poc.up.railway.app/pokemons/
                 // final deepLinking = 'https://poke-deeplinking-poc.up.railway.app/pokemons/${pokemon.id}';
                 final deepLinking =
-                    'https://poke-deeplinking-poc-production.up.railway.app/deeplinking/index.html?target=/pokemons/${pokemon.id}';
+                    '${kDeeplinkBaseUrl}/pokemons/${pokemon.id}';
                 print('DEEPLINKING: ${deepLinking}');
                 SharePlugin.shareLink(deepLinking, 'Conoce mejor este pókemon');
               },

@@ -1,4 +1,5 @@
 import 'package:deeplinking_and_miselanious/config/plugins/share_plugin.dart';
+import 'package:deeplinking_and_miselanious/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -18,7 +19,7 @@ class UserScreen extends StatelessWidget {
                 IconButton(
                   onPressed: () {
                     final deepLinking =
-                        'https://poke-deeplinking-poc-production.up.railway.app/deeplinking/index.html?target=/user';
+                        '${kDeeplinkBaseUrl}/user';
                     print('DEEPLINKING: ${deepLinking}');
                     SharePlugin.shareLink(deepLinking, 'Conoce mejor este pókemon');
                   },
